@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Layers } from 'lucide-react';
 import { Navigation } from './navigation';
-import { WalletConnect } from '../wallet-connect';
 
 export function Header() {
   return (
@@ -15,7 +14,7 @@ export function Header() {
             </Link>
             <Navigation />
           </div>
-          <WalletConnect />
+          <appkit-button />
         </div>
       </div>
     </header>

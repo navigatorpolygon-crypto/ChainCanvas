@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/layout/header";
-import { Web3Provider } from "@/components/web3-provider";
+import { Web3Provider } from "@/context/web3-provider";
+import { headers } from "next/headers";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,6 +15,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersObj = headers();
+  const cookies = headersObj.get("cookie");
+
   return (
     <html lang="en" className="dark">
       <head>
@@ -25,7 +29,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased bg-background text-foreground">
-        <Web3Provider>
+        <Web3Provider cookies={cookies}>
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-1">{children}</main>

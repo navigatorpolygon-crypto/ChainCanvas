@@ -53,14 +53,14 @@ export function WalletConnect() {
             Connect Wallet
           </Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Connect your wallet</DialogTitle>
-            <DialogDescription>
-              Select your preferred wallet to connect to ChainCanvas.
+            <DialogTitle className="text-center text-2xl font-headline">Connect your wallet</DialogTitle>
+            <DialogDescription className="text-center">
+              Choose your preferred wallet to continue
             </DialogDescription>
           </DialogHeader>
-          <div className="grid gap-4 py-4">
+          <div className="flex flex-col space-y-3 pt-4">
              {connectors.filter(c => c.name !== 'Injected').map((connector) => (
               <Button
                 key={connector.id}
@@ -69,7 +69,7 @@ export function WalletConnect() {
                     setOpen(false);
                 }}
                 variant="outline"
-                className='h-14 text-lg'
+                className='h-16 text-lg justify-start px-6 rounded-xl hover:bg-primary/10'
               >
                 {connector.name}
               </Button>

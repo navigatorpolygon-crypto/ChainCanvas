@@ -19,7 +19,9 @@ export default function LandingPage() {
       <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-12">
         <h1 className="text-5xl font-bold text-white mb-4">Welcome to ChainCanvas</h1>
         <p className="text-blue-200 mb-8">Your platform to mint and showcase your NFTs on the Base network.</p>
-        <appkit-button />
+        <div className="flex justify-center">
+          <appkit-button />
+        </div>
       </div>
     </div>
   );
